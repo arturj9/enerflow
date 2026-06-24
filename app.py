@@ -132,7 +132,6 @@ if not df_gold.empty:
     
     with col_chart1:
         st.subheader("Temperatura vs. Consumo")
-        st.markdown("Correlação direta: o consumo físico escala com o aumento térmico ambiente.")
         
         df_insight1 = df_filtered.copy()
         df_insight1['Temp_Graus'] = df_insight1['TEMP_AR'].round(0)
@@ -142,7 +141,6 @@ if not df_gold.empty:
             
     with col_chart2:
         st.subheader("Custo Financeiro por Horário")
-        st.markdown("Evidência do impacto tarifário real no Horário de Ponta (18h-20h).")
         
         custo_por_hora_bandeira = df_filtered.groupby(['Hora', 'Bandeira'])['Custo_Total'].mean().reset_index()
         
