@@ -81,7 +81,7 @@ if not df_gold.empty:
     
     datas_selecionadas = st.sidebar.date_input("Intervalo de Data", [min_date, max_date], min_value=min_date, max_value=max_date)
     
-    if isinstance(datas_selecionadas, list) and len(datas_selecionadas) == 2:
+    if isinstance(datas_selecionadas, (list, tuple)) and len(datas_selecionadas) == 2:
         start_date, end_date = datas_selecionadas
         df_filtered = df_gold[(df_gold['Data'].dt.date >= start_date) & (df_gold['Data'].dt.date <= end_date)]
     else:
